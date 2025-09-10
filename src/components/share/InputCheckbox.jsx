@@ -2,7 +2,7 @@ import React from "react";
 
 export default function InputCheckbox({ label, id }) {
   return (
-    <>
+    <div className="flex items-center">
       <input
         type="checkbox"
         id={id}
@@ -11,6 +11,7 @@ export default function InputCheckbox({ label, id }) {
       <label htmlFor={id} className="ml-2 block text-sm text-gray-700">
         {label}
       </label>
-    </>
+    </div>
+    
   );
 }

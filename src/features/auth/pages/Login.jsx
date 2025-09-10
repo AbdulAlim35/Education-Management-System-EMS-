@@ -1,7 +1,5 @@
-import React from "react";
-import InputText from "@/components/share/inputText";
-import InputCheckbox from "@/components/share/InputCheckbox";
-import PrimaryButton from "@/components/share/PrimaryButton";
+import FormLayout from "@/components/share/FormLayout";
+import fieldsData from "./config/fields";
 
 function Login() {
   return (
@@ -11,7 +9,7 @@ function Login() {
     >
       <div className="max-w-md w-full mx-4">
         <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <div className="text-center mb-8">
+          <div className="text-center mb-3">
             <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg
                 className="w-10 h-10 text-white"
@@ -30,30 +28,9 @@ function Login() {
             <h2 className="text-3xl font-bold text-gray-900">Admin Login</h2>
             <p className="text-gray-600 mt-2">Student Management System</p>
           </div>
-          <form id="login-form" className="space-y-6">
-            <div>
-              <InputText label={"Email"} placeholder={"Enter your email"} />
-            </div>
-            <div>
-              <InputText
-                label={"Password"}
-                placeholder={"Enter your password"}
-                type="password"
-              />
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <InputCheckbox label={"Remember me"} id={"remember-me"} />
-              </div>
-              <a
-                href="#"
-                className="text-sm text-primary-600 hover:text-primary-500"
-              >
-                Forgot password?
-              </a>
-            </div>
-            <PrimaryButton label={"Sign in"} />
-          </form>
+
+          <FormLayout fields={fieldsData} />
+
           <div className="mt-6 text-center text-sm text-gray-600">
             Demo credentials: admin / password
           </div>

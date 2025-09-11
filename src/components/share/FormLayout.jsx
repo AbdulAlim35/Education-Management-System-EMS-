@@ -3,11 +3,17 @@ import InputCheckbox from "@/components/share/InputCheckbox";
 import PrimaryButton from "@/components/share/PrimaryButton";
 
 export default function FormLayout({ fields: fieldsData }) {
+  const textAlignClass = {
+    left: "text-left",
+    right: "text-right",
+    center: "text-center",
+  };
   return (
-    <form className="grid grid-cols-12 gap-4">
+    <form className="grid grid-cols-12 gap-3">
       {fieldsData &&
         fieldsData().map((field, index) => {
           const id = `field-${index}`;
+
           if (field.type === "checkbox") {
             return (
               <div className={`col-span-${field.colSpan}`} key={id}>
@@ -17,7 +23,9 @@ export default function FormLayout({ fields: fieldsData }) {
           } else if (field.type === "link") {
             return (
               <div
-                className={`col-span-${field.colSpan} text-${field.textAlign}`}
+                className={`col-span-${field.colSpan} ${
+                  textAlignClass[field.textAlign] || ""
+                }`}
                 key={id}
               >
                 <a

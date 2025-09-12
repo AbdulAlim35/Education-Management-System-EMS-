@@ -7,7 +7,7 @@ const fields = () => {
       type: "email",
       required: true,
       name: "email",
-      colSpan: 12, 
+      colSpan: "col-span-12", 
     },
     {
       label: "Password",
@@ -15,26 +15,26 @@ const fields = () => {
       type: "password",
       required: true,
       name: "password",
-      colSpan: 12,
+      colSpan: 'col-span-12',
     },
     {
       label: "Remember me",
       type: "checkbox",
       name: "rememberMe",
-      colSpan: 6,
+      colSpan: 'col-span-6',
     },
     {
       label: "Forgot password?",
       type: "link",
       href: "#",
-      colSpan: 6,
-      textAlign: "right",
+      colSpan: 'col-span-6',
+      textAlign: "text-right",
     },
     {
       label: "Sign In",
       type: "button",
       action: "submit",
-      colSpan: 12,
+      colSpan: 'col-span-12',
     },
   ];
 };

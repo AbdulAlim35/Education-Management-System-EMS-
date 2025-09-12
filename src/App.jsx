@@ -1,10 +1,14 @@
+import AuthRoutes from "./routes/AuthRoutes"
 import GestRoutes from "./routes/GestRoutes"
+
+
 
 function App() {
   
   return (
     <>
-    <GestRoutes />
+    {/* <GestRoutes /> */}
+     <AuthRoutes/>
     </>
   )
 }

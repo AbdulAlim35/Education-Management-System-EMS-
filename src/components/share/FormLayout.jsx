@@ -2,26 +2,25 @@ import InputText from "@/components/share/inputText";
 import InputCheckbox from "@/components/share/InputCheckbox";
 import PrimaryButton from "@/components/share/PrimaryButton";
 
-
 export default function FormLayout({ fields: fieldsData }) {
-   const id = crypto.randomUUID();
-
+  const id = crypto.randomUUID();
+  
   return (
     <form className="grid grid-cols-12 gap-4">
       {fieldsData &&
         fieldsData().map((field, index) => {
           if (field.type === "checkbox") {
             return (
-              <div className={`${field.colSpan} text-${field.textAlign}`} key={id}>
+              <div
+                className={`${field.colSpan} text-${field.textAlign}`}
+                key={id}
+              >
                 <InputCheckbox label={field.label} id={id} />
               </div>
             );
           } else if (field.type === "link") {
             return (
-              <div
-                className={`${field.colSpan} ${field.textAlign}`}
-                key={id}
-              >
+              <div className={`${field.colSpan} ${field.textAlign}`} key={id}>
                 <a
                   href={field.href}
                   className={`text-sm text-primary-600 hover:text-primary-500 `}

@@ -9,9 +9,26 @@ const tableConfig = () => {
       { key: "actions", label: "Actions" },
     ],
     data: [
-      { Student: "John Doe ", Email: "assadd@gamil.com", StudentID: 1, Class: "10A", Contact: "+1 234 567 8900", Status: "Active" },
-      { Student: "Emma Johnson", Email: "ali@gamil.com", StudentID: 2, Class: "11A", Contact: "+1 234 567 8900", Status: "inactive" },
-      
+      {
+        initials: "JS",
+        Student: "John Doe ",
+        Email: "assadd@gamil.com",
+        StudentID: 1,
+        Class: "10A",
+        Contact: "+1 234 567 8900",
+        Status: "Active",
+        color: "bg-blue-600",
+      },
+      {
+        initials: "EJ",
+        Student: "Emma Johnson",
+        Email: "ali@gamil.com",
+        StudentID: 2,
+        Class: "11A",
+        Contact: "+1 234 567 8900",
+        Status: "inactive",
+        color: "bg-yellow-600",
+      },
     ],
   };
 };

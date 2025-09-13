@@ -87,60 +87,64 @@ export default function TableLayout({
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                {columns && columns().columns.map((col)=> (
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  {col.label}
-                </th>
-                )) }
+                {columns &&
+                  columns().columns.map((col, inx) => (
+                    <th key={inx} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {col.label}
+                    </th>
+                  ))}
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {data && data().data.map((row)=> (
-              <tr className="hover:bg-gray-50">
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="flex items-center">
-                    <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">
-                        JS
+              {data &&
+                data().data.map((row, index) => (
+                  <tr key={index} className="hover:bg-gray-50">
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center">
+                        <div
+                          className={`${row.color} w-10 h-10 rounded-full flex items-center justify-center`}
+                        >
+                          <span className="text-white text-sm font-semibold">
+                            {row.initials}
+                          </span>
+                        </div>
+                        <div className="ml-4">
+                          <div className="text-sm font-medium text-gray-900">
+                            {row.Student}
+                          </div>
+                          <div className="text-sm text-gray-500">
+                            {row.Email}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {row.StudentID}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {row.Class}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                      {row.Contact}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                        {row.Status}
                       </span>
-                    </div>
-                    <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">
-                        {row.Student}
-                      </div>
-                      <div className="text-sm text-gray-500">
-                        {row.Email}
-                      </div>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {row.StudentID}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {row.Class}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {row.Contact}
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
-                   {row.Status}
-                  </span>
-                </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                  <button className="text-primary-600 hover:text-primary-900">
-                    View
-                  </button>
-                  <button className="text-yellow-600 hover:text-yellow-900">
-                    Edit
-                  </button>
-                  <button className="text-red-600 hover:text-red-900">
-                    Delete
-                  </button>
-                </td>
-              </tr>
-              ))}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                      <button className="text-primary-600 hover:text-primary-900">
+                        View
+                      </button>
+                      <button className="text-yellow-600 hover:text-yellow-900">
+                        Edit
+                      </button>
+                      <button className="text-red-600 hover:text-red-900">
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

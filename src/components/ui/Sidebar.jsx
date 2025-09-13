@@ -10,9 +10,9 @@ export default function Sidebar() {
       <div className="flex flex-col h-full pt-16 lg:pt-0">
         <nav className="flex-1 px-4 py-6 space-y-2">
           {sidebarMenu &&
-            sidebarMenu().map((item) => (
+            sidebarMenu().map((item, index) => (
               <a
-                key={item.id}
+                key={item.id  || index}
                 href={item.path}
                 className={`nav-item flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gray-100 ${
                   item.active

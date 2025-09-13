@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import StudentSection from '../features/auth/student/pages/StudentSection'
-import AuthLayout from '../layouts/AuthLayout'
-import TeachersSection from '../features/auth/teachers/pages/TeachersSection'
+import StudentSection from '@/features/student/pages/StudentSection'
+import AuthLayout from '@/layouts/AuthLayout'
+import TeachersSection from '@/features/teachers/pages/TeachersSection'
 
 
 

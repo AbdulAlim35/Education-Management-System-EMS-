@@ -5,7 +5,7 @@ import Login from "../features/auth/pages/Login"
 export default function GestRoutes () {
     return(
         <Routes>
-            <Route index element={<Login/>} />
+            <Route path="/" element={<Login/>} />
 
        
         </Routes>

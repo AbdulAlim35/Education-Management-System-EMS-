@@ -1,26 +1,40 @@
 import InputText from "@/components/share/inputText";
 import InputCheckbox from "@/components/share/InputCheckbox";
 import PrimaryButton from "@/components/share/PrimaryButton";
+import { singleValidataionError } from "@/utils/helper";
 
-export default function FormLayout({ fields: fieldsData }) {
+export default function FormLayout({ formData, fields: fieldsData }) {
   const id = crypto.randomUUID();
-  
+
   return (
-    <form className="grid grid-cols-12 gap-4">
+    <form
+      onSubmit={formData.form.handleSubmit(formData.onSubmit)}
+      className="grid grid-cols-12 gap-4"
+    >
       {fieldsData &&
         fieldsData().map((field, index) => {
           if (field.type === "checkbox") {
             return (
               <div
                 className={`${field.colSpan} text-${field.textAlign}`}
-                key={id}
+                key={id + index}
               >
-                <InputCheckbox label={field.label} id={id} />
+                <InputCheckbox
+                  {...formData.form.register(field.name, {
+                    required: field.required,
+                  })}
+                  label={field.label}
+                  id={id}
+                />
+                {singleValidataionError(formData, field.name)}
               </div>
             );
           } else if (field.type === "link") {
             return (
-              <div className={`${field.colSpan} ${field.textAlign}`} key={id}>
+              <div
+                className={`${field.colSpan} ${field.textAlign}`}
+                key={id + index}
+              >
                 <a
                   href={field.href}
                   className={`text-sm text-primary-600 hover:text-primary-500 `}
@@ -31,19 +45,23 @@ export default function FormLayout({ fields: fieldsData }) {
             );
           } else if (field.type === "button") {
             return (
-              <div className={`${field.colSpan}`} key={id}>
+              <div className={`${field.colSpan}`} key={id + index}>
                 <PrimaryButton label={field.label} />
               </div>
             );
           } else {
             // default: input text or other types
             return (
-              <div className={`${field.colSpan}`} key={id}>
+              <div className={`${field.colSpan}`} key={id + index}>
                 <InputText
+                  {...formData.form.register(field.name, {
+                    required: field.required,
+                  })}
                   label={field.label}
                   placeholder={field.placeholder}
                   type={field.type}
                 />
+                {singleValidataionError(formData, field.name)}
               </div>
             );
           }

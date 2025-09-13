@@ -1,7 +1,8 @@
 import FormLayout from "@/components/share/FormLayout";
-import fieldsData from "./config/fields";
-
+import fieldsData from "../config/fields";
+import useAuth from "../hooks/useAuth";
 function Login() {
+  const formData = useAuth();
   return (
     <div
       id="login-page"
@@ -29,7 +30,7 @@ function Login() {
             <p className="text-gray-600 mt-2">Student Management System</p>
           </div>
 
-          <FormLayout fields={fieldsData} />
+          <FormLayout formData={formData} fields={fieldsData} />
 
           <div className="mt-6 text-center text-sm text-gray-600">
             Demo credentials: admin / password

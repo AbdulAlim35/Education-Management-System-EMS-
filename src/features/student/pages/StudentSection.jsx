@@ -2,7 +2,7 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import PageLayout from '@/components/share/PageLayout'
 import TableLayout from '@/components/share/TableLayout'
-import tableConfig from './tableConfig'
+import  tableConfig  from '../config/tableConfig'
 
 export default function StudentSection() {
   return (

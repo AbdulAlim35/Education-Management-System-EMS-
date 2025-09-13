@@ -1,16 +1,13 @@
-import AuthRoutes from "./routes/AuthRoutes"
-import GestRoutes from "./routes/GestRoutes"
-
-
+import AuthRoutes from "./routes/AuthRoutes";
+import GestRoutes from "./routes/GestRoutes";
 
 function App() {
-  
   return (
     <>
-    {/* <GestRoutes /> */}
-     <AuthRoutes/>
+      <GestRoutes />
+      <AuthRoutes />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

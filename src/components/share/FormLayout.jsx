@@ -9,7 +9,7 @@ export default function FormLayout({ formData, fields: fieldsData }) {
   return (
     <form
       onSubmit={formData.form.handleSubmit(formData.onSubmit)}
-      className="grid grid-cols-12 gap-4"
+      className="grid grid-cols-12 gap-5"
     >
       {fieldsData &&
         fieldsData().map((field, index) => {

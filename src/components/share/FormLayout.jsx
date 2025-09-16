@@ -55,7 +55,9 @@ export default function FormLayout({ formData, fields: fieldsData }) {
               <div className={`${field.colSpan}`} key={id + index}>
                 <InputText
                   {...formData.form.register(field.name, {
-                    required: field.required,
+                    required: field.required
+                      ? `${field.label} is required`
+                      : false,
                   })}
                   label={field.label}
                   placeholder={field.placeholder}

@@ -1,6 +1,12 @@
+import { useState } from "react";
+import { IoMdAdd } from "react-icons/io";
+import AuthFormLayout from "@/components/share/AuthFormLayout";
+import { studentFields } from "@/features/student/config/studentFields";
+import { RiCloseLargeLine } from "react-icons/ri";
 
 
 export default function PageLayout({children, title, description, buttonLabel}) {
+   const [open, setOpen] = useState(false);
   return (
     <div id="students-section" className="content-section p-6">
       <div className="flex justify-between items-center mb-6">
@@ -10,25 +16,43 @@ export default function PageLayout({children, title, description, buttonLabel}) 
          { description }
           </p>
         </div>
-        <button
-          id="add-student-btn"
-          className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors flex items-center space-x-2"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+     
+         <button
+        id="add-student-btn"
+        className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2 shadow-lg"
+        onClick={() => setOpen(true)}
+      >
+        <IoMdAdd size={20} />
+        <span>{buttonLabel}</span>
+      </button>
+
+      {/* Modal */}
+      {open && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div
+            className={`relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all duration-300 ease-out
+             `}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-            />
-          </svg>
-          <span>{buttonLabel}</span>
-        </button>
+            {/* Header */}
+            <div className="flex justify-between items-center border-b p-5">
+              <h2 className="text-lg font-semibold text-gray-800">
+                Add New Student
+              </h2>
+              <button
+                onClick={() => setOpen(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl cursor-pointer"
+              >
+                <RiCloseLargeLine />
+              </button>
+            </div>
+
+            {/* Scrollable Form */}
+            <div className="max-h-[70vh] overflow-y-auto p-6">
+              <AuthFormLayout studentFields={studentFields} />
+            </div>
+          </div>
+        </div>
+      )}
       </div>
       {children}
     </div>

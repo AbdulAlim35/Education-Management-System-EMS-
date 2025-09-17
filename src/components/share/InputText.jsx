@@ -2,6 +2,7 @@ export default function InputText({
   label,
   placeholder,
   type = "text",
+  rows,
   ...props
 }) {
   return (
@@ -18,7 +19,8 @@ export default function InputText({
       <input
         {...props}
         type={type}
-        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-300"
+        rows={rows}
+        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
         placeholder={placeholder}
       />
     </>

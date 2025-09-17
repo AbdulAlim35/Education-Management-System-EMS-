@@ -12,13 +12,11 @@ const useAuth = () => {
         const req = await axiosClient.post("login", {
           ...data
         });
-          
- 
-      //  const { token, user } = req.data;
+      
       // Save token in localStorage (or cookies)
       localStorage.setItem("token", req.data.data.token);
-// 
-        // navigate('/auth/dashboard')
+
+        navigate('/auth/dashboard')
 
       } catch (error) {
          if (error.response?.status === 401) {

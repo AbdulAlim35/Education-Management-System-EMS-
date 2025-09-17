@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
-import AuthFormLayout from "@/components/share/AuthFormLayout";
-import { studentFields } from "@/features/student/config/studentFields";
 import { RiCloseLargeLine } from "react-icons/ri";
 
 
-export default function PageLayout({children, title, description, buttonLabel}) {
+export default function PageLayout({children, title, description, buttonLabel, form, header}) {
    const [open, setOpen] = useState(false);
   return (
     <div id="students-section" className="content-section p-6">
@@ -19,7 +17,7 @@ export default function PageLayout({children, title, description, buttonLabel}) 
      
          <button
         id="add-student-btn"
-        className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2 shadow-lg"
+        className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 cursor-pointer transition-colors flex items-center space-x-2 shadow-lg"
         onClick={() => setOpen(true)}
       >
         <IoMdAdd size={20} />
@@ -36,7 +34,7 @@ export default function PageLayout({children, title, description, buttonLabel}) 
             {/* Header */}
             <div className="flex justify-between items-center border-b p-5">
               <h2 className="text-lg font-semibold text-gray-800">
-                Add New Student
+               {header}
               </h2>
               <button
                 onClick={() => setOpen(false)}
@@ -48,7 +46,7 @@ export default function PageLayout({children, title, description, buttonLabel}) 
 
             {/* Scrollable Form */}
             <div className="max-h-[70vh] overflow-y-auto p-6">
-              <AuthFormLayout studentFields={studentFields} />
+              {form}
             </div>
           </div>
         </div>

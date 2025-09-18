@@ -1,37 +1,25 @@
 import { useForm } from "react-hook-form";
-import axiosClient from "@/api/httpClient";
+import authService from "../service/authService";
 import { useNavigate } from "react-router-dom";
+import { servierValidataionError } from "@/utils/Helper";
+import toast from "react-hot-toast";
 const useAuth = () => {
   const formControler = useForm();
-  const navigate =useNavigate()
- 
+  const navigate = useNavigate();
+
   return {
     form: formControler,
     onSubmit: async (data) => {
       try {
-        const req = await axiosClient.post("login", {
-          ...data
-        });
-      
-      // Save token in localStorage (or cookies)
-      localStorage.setItem("token", req.data.data.token);
-
-        navigate('/auth/dashboard')
-
+        const response = await authService.login(data);
+        // Save token in localStorage (or cookies)
+        localStorage.setItem("token", response.token);
+        navigate("/auth/dashboard");
+        toast.success("Login Successfully!");
       } catch (error) {
-         if (error.response?.status === 401) {
-      formControler.setError("email", {
-        type: "manual",
-        message: "Email Address invalid"
-      });
-      // formControler.setError("password", {
-      //   type: "manual",
-      //   message: " Password Address invalid "
-      // });
+        servierValidataionError(error, formControler);
       }
-    }
-   
-  }
-  }
+    },
+  };
 };
 export default useAuth;

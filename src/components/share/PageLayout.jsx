@@ -28,8 +28,7 @@ export default function PageLayout({children, title, description, buttonLabel, f
       {open && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div
-            className={`relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all duration-300 ease-out
-             `}
+            className={"relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl transform transition-all duration-300 ease-out"}
           >
             {/* Header */}
             <div className="flex justify-between items-center border-b p-5">

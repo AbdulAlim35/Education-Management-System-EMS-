@@ -2,7 +2,6 @@ import InputText from "@/components/share/inputText";
 import InputCheckbox from "@/components/share/InputCheckbox";
 import PrimaryButton from "@/components/share/PrimaryButton";
 import { singleValidataionError } from "@/utils/helper";
-
 export default function FormLayout({ formData, fields: fieldsData }) {
   const id = crypto.randomUUID();
 
@@ -68,6 +67,8 @@ export default function FormLayout({ formData, fields: fieldsData }) {
             );
           }
         })}
+        
     </form>
+    
   );
 }

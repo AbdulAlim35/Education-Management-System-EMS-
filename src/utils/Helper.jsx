@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 export const singleValidataionError = (formData, name) => {
   return (
     formData.form.formState.errors &&
@@ -7,4 +8,18 @@ export const singleValidataionError = (formData, name) => {
       </p>
     )
   );
+};
+
+export const servierValidataionError = (error, form) => {
+  const { data } = error.response;
+  if (data.message) {
+    toast.error(data.message || "Something went wrong");
+  } else {
+    data.errors.forEach((err) => {
+      form.setError(err.path, {
+        type: "server",
+        message: err.msg,
+      });
+    });
+  }
 };

@@ -7,6 +7,11 @@ const sidebarMenu = () => {
       icon: icon.TbLayoutDashboardFilled,
     },
     {
+      label: "Class",
+      path: "/auth/class",
+      icon: icon.FaUserFriends,
+    },
+    {
       label: "Students",
       path: "/students",
       icon: icon.FaUserFriends,

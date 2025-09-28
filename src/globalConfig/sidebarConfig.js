@@ -3,7 +3,7 @@ const sidebarMenu = () => {
   return [
     {
       label: "Dashboard",
-      path: "/dashboard",
+      path: "/auth/dashboard",
       icon: icon.TbLayoutDashboardFilled,
     },
     {

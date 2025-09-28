@@ -18,10 +18,14 @@ export default function Class() {
         form={studentClass.form}
       >
         <BasicModel header="Create Class" form={studentClass.form} size="30%">
-          <FormLayout formData={studentClass} fields={fields}  />
+          <FormLayout formData={studentClass} fields={fields} />
         </BasicModel>
 
-        <TableLayout filter={false} columns={tableConfig} data={tableConfig} />
+        <TableLayout
+          filter={false}
+          columns={tableConfig}
+          data={studentClass.user}
+        />
       </PageLayout>
     </>
   );

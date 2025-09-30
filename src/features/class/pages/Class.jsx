@@ -23,7 +23,7 @@ export default function Class() {
 
         <TableLayout
           filter={false}
-          columns={tableConfig}
+          columns={tableConfig(studentClass.action)}
           data={studentClass.user}
         />
       </PageLayout>

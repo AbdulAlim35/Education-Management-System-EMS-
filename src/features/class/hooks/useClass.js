@@ -3,12 +3,10 @@ import { useForm } from "react-hook-form";
 import classService from "../service/classService";
 import { useEffect, useState } from "react";
 import axiosClient from "@/api/httpClient";
-import { useNavigate } from "react-router-dom";
 import { servierValidataionError } from "@/utils/Helper";
 const useClass = () => {
   const form = useForm();
   const [user, setUser] = useState([]);
-  const navigate = useNavigate();
   const fatchData = async () => {
     const ras = await axiosClient.get("auth/class");
     setUser(ras.data.data);
@@ -42,13 +40,17 @@ const useClass = () => {
       form.reset(row);
       form.setValue("model", true);
     },
-    onDelecte: async (data) => {
+    onDelecte: async (_id) => {
       try {
-        await classService.classDelecte(data)
+      const req =  await classService.classDelecte(_id)
+       fatchData();
       } catch (error) {
-        
+         console.error(error);
       }
-    }
+    },
+    // onDelecte: (row) =>{
+    //   fatchData(row);
+    // }
   };
   return {
     form,

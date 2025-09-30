@@ -11,11 +11,8 @@ const classService = {
     return res.data.data;
   },
   classDelecte: async (id) => {
- const log = await axiosClient.delete(`/auth/class/delete/${id}`)
-  console.log(log);
-
-  }
-  
+    await axiosClient.delete(`/auth/class/delete/${id}`);
+  },
 };
 
 export default classService;

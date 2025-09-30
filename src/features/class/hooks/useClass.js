@@ -42,6 +42,13 @@ const useClass = () => {
       form.reset(row);
       form.setValue("model", true);
     },
+    onDelecte: async (data) => {
+      try {
+        await classService.classDelecte(data)
+      } catch (error) {
+        
+      }
+    }
   };
   return {
     form,

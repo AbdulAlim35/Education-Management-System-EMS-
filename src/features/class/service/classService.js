@@ -10,6 +10,12 @@ const classService = {
     const res = await axiosClient.put(`/auth/class/update/${id}`, data);
     return res.data.data;
   },
+  classDelecte: async (id) => {
+ const log = await axiosClient.delete(`/auth/class/delete/${id}`)
+  console.log(log);
+
+  }
+  
 };
 
 export default classService;

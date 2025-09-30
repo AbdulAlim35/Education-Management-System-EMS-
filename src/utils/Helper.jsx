@@ -12,7 +12,7 @@ export const singleValidataionError = (formData, name) => {
 
 export const servierValidataionError = (error, form) => {
   const { data } = error.response;
-  if (data.message) {
+  if (data.message && !data.errors) {
     toast.error(data.message || "Something went wrong");
   } else {
     data.errors.forEach((err) => {

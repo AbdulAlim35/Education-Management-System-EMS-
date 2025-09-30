@@ -6,6 +6,10 @@ const classService = {
       ...data,
     });
   },
+  classUpdate: async (id, data) => {
+    const res = await axiosClient.put(`/auth/class/update/${id}`, data);
+    return res.data.data;
+  },
 };
 
 export default classService;

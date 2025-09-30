@@ -4,10 +4,15 @@ import PrimaryButton from "@/components/share/PrimaryButton";
 import { singleValidataionError } from "@/utils/helper";
 export default function FormLayout({ formData, fields: fieldsData }) {
   const id = crypto.randomUUID();
-
+ console.log(formData);
+ 
   return (
     <form
-      onSubmit={formData.form.handleSubmit(formData.onSubmit)}
+      onSubmit={formData.form.handleSubmit(
+        formData.form.watch("_id")
+          ? formData.action.onUpdate
+          : formData.action.onSubmit
+      )}
       className="grid grid-cols-12 gap-5"
     >
       {fieldsData &&
@@ -67,8 +72,6 @@ export default function FormLayout({ formData, fields: fieldsData }) {
             );
           }
         })}
-        
     </form>
-    
   );
 }

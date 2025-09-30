@@ -17,7 +17,10 @@ const tableConfig = (action) => {
           >
             Edit
           </button>
-          <button className="text-red-600 hover:text-red-900 cursor-pointer">
+          <button
+            className="text-red-600 hover:text-red-900 cursor-pointer"
+            onClick={() => action.onDelecte(row)}
+          >
             Delete
           </button>
         </div>

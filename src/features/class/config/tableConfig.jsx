@@ -6,7 +6,9 @@ const tableConfig = (action) => {
       label: "Actions",
       cell: (row) => (
         <div className="flex gap-2">
-          <button className="text-blue-600 hover:text-blue-900 cursor-pointer">
+          <button className="text-blue-600 hover:text-blue-900 cursor-pointer"
+          onClick={() => { console.log("Row clicked:", row); action.onView(row)}}
+          >
             View
           </button>
           <button

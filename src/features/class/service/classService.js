@@ -6,6 +6,10 @@ const classService = {
       ...data,
     });
   },
+  classShow: async (data) => {
+    const list = await axiosClient.get("auth/class", {...data});
+    return list.data.data;
+  },
   classUpdate: async (id, data) => {
     const res = await axiosClient.put(`/auth/class/update/${id}`, data);
     return res.data.data;

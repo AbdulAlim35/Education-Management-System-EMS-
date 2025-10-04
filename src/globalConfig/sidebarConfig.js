@@ -9,11 +9,11 @@ const sidebarMenu = () => {
     {
       label: "Class",
       path: "/auth/class",
-      icon: icon.FaUserFriends,
+      icon: icon.FaSchool,
     },
     {
-      label: "Students",
-      path: "/students",
+      label: "Section",
+      path: "/auth/section",
       icon: icon.FaUserFriends,
     },
     {

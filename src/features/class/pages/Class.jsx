@@ -17,7 +17,7 @@ export default function Class() {
         header="Add New Class"
         form={studentClass.form}
       >
-        <BasicModel header="Create Class" form={studentClass.form} size="30%">
+        <BasicModel header="Create Class" form={studentClass.form} size="w-[25%]">
           <FormLayout formData={studentClass} fields={fields} />
         </BasicModel>
 

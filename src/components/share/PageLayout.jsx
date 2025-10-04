@@ -18,7 +18,7 @@ export default function PageLayout({
         <button
           id="add-student-btn"
           className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 cursor-pointer transition-colors flex items-center space-x-2 shadow-lg"
-          onClick={() => form.setValue("model", true)}
+          onClick={() => {form.reset(); form.setValue("model", true)}}
         >
           <IoMdAdd size={20} />
           <span>{buttonLabel}</span>

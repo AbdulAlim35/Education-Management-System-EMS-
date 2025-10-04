@@ -1,8 +1,10 @@
 import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
-const tableConfig = (action) => {
+const table = (action) => {
   return [
-    { key: "name", label: "Class Name" },
+    { key: "name", label: "Section Name" },
+    { key: "capacity", label: "Capacity" },
+    { key: "class_id", label: "Class Name", cell: (row) => row.class_id?.name || "-"},
     {
       key: "action",
       label: "Actions",
@@ -11,10 +13,10 @@ const tableConfig = (action) => {
           <button
             className="text-yellow-600 hover:text-yellow-900 text-[19px] cursor-pointer"
             onClick={() => {
-              action.onEdit(row);
+              action.onEdit(row)
             }}
           >
-           <FaEdit />
+            <FaEdit />
           </button>
           <button
             className="text-red-600 hover:text-red-900 text-[19px] cursor-pointer"
@@ -29,5 +31,4 @@ const tableConfig = (action) => {
     },
   ];
 };
-
-export default tableConfig;
+export default table;

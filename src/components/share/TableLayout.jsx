@@ -8,6 +8,7 @@ export default function TableLayout({
   pagination = true,
   columns,
   data,
+  
 }) {
   const TableToolbar = () => (
     <div className="bg-white rounded-xl shadow-md p-6 mb-6">
@@ -137,7 +138,7 @@ export default function TableLayout({
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
               <tr>
-                {columns &&
+                {Array.isArray (columns) &&
                   columns.map((col, inx) => (
                     <th
                       key={inx}

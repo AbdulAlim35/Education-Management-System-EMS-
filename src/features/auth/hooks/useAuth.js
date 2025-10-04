@@ -6,8 +6,7 @@ import toast from "react-hot-toast";
 const useAuth = () => {
   const formControler = useForm();
   const navigate = useNavigate();
-
-  return {
+  const action = {
     form: formControler,
     onSubmit: async (data) => {
       try {
@@ -20,6 +19,11 @@ const useAuth = () => {
         servierValidataionError(error, formControler);
       }
     },
+  };
+
+  return {
+     form: formControler,
+    action,
   };
 };
 export default useAuth;

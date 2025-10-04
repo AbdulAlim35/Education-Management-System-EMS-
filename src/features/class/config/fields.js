@@ -2,7 +2,7 @@
 const fields = () => {
   return [
     {
-      label: "Name",
+      label: " Class Name",
       placeholder: "Enter your class",
       type: "text",
       required: "class  is required",

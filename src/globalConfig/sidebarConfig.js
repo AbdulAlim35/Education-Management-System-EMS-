@@ -16,6 +16,11 @@ const sidebarMenu = () => {
       path: "/auth/section",
       icon: icon.FaUserFriends,
     },
+     {
+      label: "Student",
+      path: "/auth/student",
+      icon: icon.FaUser,
+    },
     {
       label: "Teachers",
       path: "/teachers",

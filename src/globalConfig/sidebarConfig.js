@@ -23,7 +23,7 @@ const sidebarMenu = () => {
     },
     {
       label: "Teachers",
-      path: "/teachers",
+      path: "/auth/teacher",
       icon: icon.FaUserTie,
     },
   ];

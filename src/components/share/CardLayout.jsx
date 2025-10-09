@@ -18,11 +18,12 @@ export default function CardLayout({ CardConfig, data }) {
                 <span className="text-white text-xl font-semibold">
                   {card.first_name?.[0]}
                   {card.last_name?.[0]}
+                  {card.name?.split(" ").map(n => n[0]).join("")}
                 </span>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">
-                  {card.first_name} {card.last_name}
+                  {card.first_name} {card.last_name} {card.name}
                 </h3>
                 <p className="text-gray-600">{card.email}</p>
               </div>

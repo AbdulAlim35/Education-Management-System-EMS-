@@ -20,7 +20,7 @@ export default function Student() {
    <BasicModel header="Create Student" form={student.form} size='w-[35%]' >
     <FormLayout formData={student}  fields={ () => fields (student.sectinState)}/>
    </BasicModel>
-    <CardLayout  subject="koi" CardConfig={student.ref} data={Card(student.action)}/>
+    <CardLayout  CardConfig={student.ref} data={Card(student.action)}/>
     </PageLayout>
     </>
   )

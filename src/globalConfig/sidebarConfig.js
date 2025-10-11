@@ -26,6 +26,11 @@ const sidebarMenu = () => {
       path: "/auth/teacher",
       icon: icon.FaUserTie,
     },
+    {
+      label: "Subject",
+      path: "/auth/subject",
+      icon: icon.FaBook,
+    },
   ];
 };
 

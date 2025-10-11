@@ -17,7 +17,7 @@ export default function Teacher() {
         buttonLabel="Add Teachers"
         form={teacher.form}
         >
-         <BasicModel header="Create Teachers" form={teacher.form}  size='w-[35%]'>
+         <BasicModel header="Create Teachers" form={teacher.form}  size='w-[30%]'>
          <FormLayout formData={teacher} fields={() => fields(teacher.action)}/>
          </BasicModel>
             <CardLayout CardConfig={teacher.list} data={Card(teacher.action)} />

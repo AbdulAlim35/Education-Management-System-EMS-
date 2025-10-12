@@ -4,9 +4,8 @@ import useStudent from '../hooks/useStudent'
 import BasicModel from '@/components/share/BasicModel'
 import FormLayout from '@/components/share/FormLayout'
 import fields from '../config/fields'
-import CardLayout from '@/components/share/CardLayout'
-import Card from '../config/Card'
-
+import TableLayout from '@/components/share/TableLayout'
+import Table from '../config/Table'
 export default function Student() {
   const student = useStudent()
   return (
@@ -20,7 +19,8 @@ export default function Student() {
    <BasicModel header="Create Student" form={student.form} size='w-[35%]' >
     <FormLayout formData={student}  fields={ () => fields (student.sectinState)}/>
    </BasicModel>
-    <CardLayout  CardConfig={student.ref} data={Card(student.action)}/>
+    {/* <CardLayout  CardConfig={student.ref} data={Card(student.action)}/> */}
+    <TableLayout columns={Table(student.action)} data={student.ref}/>
     </PageLayout>
     </>
   )

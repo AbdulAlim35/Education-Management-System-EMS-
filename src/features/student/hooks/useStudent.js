@@ -44,6 +44,7 @@ const useStudent = () => {
   };
   const action = {
     onSubmit: async (data) => {
+      
       try {
         await studentService.student(data);
         studentList();

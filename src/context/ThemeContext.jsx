@@ -4,7 +4,7 @@ const ThemeContext = ({ children }) => {
   const [isAuth, setAuth] = useState(false);
 
   useEffect(() => {
-    const getData = localStorage.getItem("authUser");
+    const getData = localStorage.getItem("token");
     if (getData) {
       setAuth(true);
     }
@@ -19,6 +19,7 @@ const ThemeContext = ({ children }) => {
   );
 };
 export default ThemeContext;
+
 export function useTheme() {
   return useContext(TheemProvider);
 }

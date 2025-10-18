@@ -11,7 +11,7 @@ const table = (action) => {
       cell: (row) => (
         <div className="flex gap-2">
           <button
-            className="text-yellow-600 hover:text-yellow-900 text-[19px] cursor-pointer"
+            className="font-medium text-yellow-600 hover:text-yellow-900 py-1 px-1 rounded-lg transition-colors cursor-pointer"
             onClick={() => {
               action.onEdit(row)
             }}
@@ -19,7 +19,7 @@ const table = (action) => {
             <FaEdit />
           </button>
           <button
-            className="text-red-600 hover:text-red-900 text-[19px] cursor-pointer"
+            className=" font-medium text-red-600 hover:text-red-900 py-1 px-1 rounded-lg  transition-colors cursor-pointer"
             onClick={() => {
               action.onDelecte(row._id);
             }}

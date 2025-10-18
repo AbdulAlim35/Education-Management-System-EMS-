@@ -8,11 +8,19 @@ import Section from "@/features/section/pages/Section";
 import Student from "@/features/student/pages/Student";
 import Teacher from "@/features/teacher/pages/teacher";
 import Subject from "@/features/subject/pages/Subject";
+import ProtectedRoute from "@/components/route/ProtectedRoute";
 
 export default function AuthRoutes() {
   return (
     <Routes>
-      <Route path="auth" element={<AuthLayout />}>
+      <Route path="auth" element={
+       <ProtectedRoute>
+           <AuthLayout />
+       </ProtectedRoute>
+
+      
+       
+        }>
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="class" element={<Class />} />
         <Route path="section" element={<Section />} />

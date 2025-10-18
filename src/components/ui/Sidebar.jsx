@@ -1,5 +1,6 @@
 import React from "react";
 import sidebarMenu from "@/globalConfig/sidebarConfig";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   return (
@@ -11,9 +12,9 @@ export default function Sidebar() {
         <nav className="flex-1 px-4 py-6 space-y-2">
           {sidebarMenu &&
             sidebarMenu().map((item, index) => (
-              <a
+              <NavLink
                 key={item.id  || index}
-                href={item.path}
+                to={item.path}
                 className={`nav-item flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-gray-100 ${
                   item.active
                     ? "active text-primary-600 bg-primary-50"
@@ -23,7 +24,7 @@ export default function Sidebar() {
               >
                 <item.icon className="w-5 h-5" />
                 <span>{item.label}</span>
-              </a>
+              </NavLink>
             ))}
         </nav>
       </div>

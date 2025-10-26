@@ -1,7 +1,7 @@
 import InputText from "@/components/share/InputText";
 import InputCheckbox from "@/components/share/InputCheckbox";
 import PrimaryButton from "@/components/share/PrimaryButton";
-import { singleValidataionError } from "@/utils/helper";
+import { singleValidataionError } from "@/utils/Helper";
 import DropDown from "@/components/share/DropDown";
 export default function FormLayout({ formData, fields: fieldsData }) {
   const id = crypto.randomUUID();

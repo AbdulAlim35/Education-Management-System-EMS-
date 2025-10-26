@@ -1,4 +1,4 @@
-import InputText from "@/components/share/inputText";
+import InputText from "@/components/share/InputText";
 import InputCheckbox from "@/components/share/InputCheckbox";
 import PrimaryButton from "@/components/share/PrimaryButton";
 import { singleValidataionError } from "@/utils/helper";

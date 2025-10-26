@@ -6,7 +6,7 @@ import Dashboard from "@/features/dashboard/pages/Dashboard";
 import Class from "../features/class/pages/Class";
 import Section from "@/features/section/pages/Section";
 import Student from "@/features/student/pages/Student";
-import Teacher from "@/features/teacher/pages/teacher";
+import Teacher from "@/features/teacher/pages/Teacher";
 import Subject from "@/features/subject/pages/Subject";
 import ProtectedRoute from "@/components/route/ProtectedRoute";
 

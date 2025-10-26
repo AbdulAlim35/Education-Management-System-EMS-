@@ -2,7 +2,7 @@ import PageLayout from "@/components/share/PageLayout";
 import TableLayout from "@/components/share/TableLayout";
 import tableConfig from "../config/tableConfig";
 import fields from "../config/fields";
-import BasicModel from "@/components/share/basicModel";
+import BasicModel from "@/components/share/BasicModel";
 import useClass from "../hooks/useClass";
 import FormLayout from "@/components/share/FormLayout";
 

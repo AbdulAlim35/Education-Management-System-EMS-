@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 
 
-export const singleValidationError = (formData, fieldName) => {
+export const singleValidataonError = (formData, fieldName) => {
   const error = formData?.form?.formState?.errors?.[fieldName];
   return (
     error && (
@@ -13,7 +13,7 @@ export const singleValidationError = (formData, fieldName) => {
 };
 
 
-export const serverValidationError = (error, form) => {
+export const serverValidataonError = (error, form) => {
   const data = error?.response?.data;
 
   if (!data) {

@@ -18,8 +18,12 @@ function Login() {
             <h2 className="text-3xl font-bold text-gray-900">Admin Login</h2>
             <p className="text-gray-600 mt-2">Student Management System</p>
           </div>
-
           <FormLayout formData={formData} fields={fieldsData} />
+          <div className="flex flex-row  space-x-4 mt-1">
+             <p className="text-gray-600 mt-2">Email:admin@gmail.com</p>
+             <p className="text-gray-600 mt-2">Password:123456</p>
+          </div>
+          
         </div>
       </div>
     </div>
